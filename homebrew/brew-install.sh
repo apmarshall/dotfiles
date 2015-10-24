@@ -5,6 +5,11 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
+# Set Directory
+export ZSH=$HOME/.dotfiles
+
+set -e
+
 # Check for Homebrew
 if test ! $(which brew)
 then
@@ -20,6 +25,11 @@ then
   fi
   
 fi
+
+# Check that jq is installed. If not, install it.
+if test ! [ brew list | grep "jq" ]
+then
+  brew install jq
 
 # Ask for the administrator password
 # sudo -v
@@ -38,81 +48,31 @@ brew upgrade --all
 # Tap needed kegs
 echo "Checking tapped kegs."
 
-#Array of Kegs to Be Tapped
-KEGS=("homebrew/dupes","homebrew/versions")
-
-# Check if Keg already tapped. If Not, tap it.
-for i in {$KEGS[@]}
-  if test [ brew tap | grep '{$KEGS[$i]}' ]
+find . -name packages.json | while read packages.json do
+# Check for already tapped kegs, tap the ones that aren't already tapped
+  for i in $(jq .Taps[])
+    if test [ brew tap | grep $(jq .Taps[$i] ]
   then
-    echo "{$KEGS[$i]} already tapped. Checking next keg"
+    echo "$(jq .Taps[$i]) already tapped. Checking next keg"
   else
-    brew tap {$KEGS[$i]}
-    echo "Installing {$KEGS[$i]}"
+    brew tap $(jq .Taps[i])
+    echo "Installing $(jq .Taps[i]"
   fi
 
-# Install Utilities (those that come with OS X are outdated).
-# ?? Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-echo "Installing Utilities."
+# Install needed packages
+echo "Installing requested packages"
 
-# Array of OSX Tools to Be Installed
-BREWUTILS=("coreutils", "findutils", "gnu-sed", "wget", "grep", "openssh", "git")
-
-# Check if pakcages already installed. If not, install them.
-for i in {$BREWUTILS[@]}
-  if test [ brew list | grep "{$BREWUTILS[$i]}"]
+# Check for already installed packages, install the ones that aren't already installed
+for i in $(jq .Packages.Installs[])
+  if test [ brew list | grep $(jq .Packages.Installs[$i])]
   then
-    echo "{$BREWUTILS[$i]} already installed. Checking next utility."
+    echo "$(jq .Packages.Installs[$i]) already installed. Checking next utility."
   else
-    brew install {$BREWUTILS[$i]}
-    echo "Installing {$BREWUTILS[$i]}."
+    brew install $(jq .Packages.Installs[$i])
+    echo "Installing $(jq .Packages.Installs[$i])."
   fi
 
-# Install Add-on Tools
-echo "Installing extensions to tools you use."
-
-# Array of OSX Tools to Be Installed
-BREWADDS=("git-extras", "fasd", "bundler", "hub", "tmux", "the_silver_searcher")
-
-# Check if pakcages already installed. If not, install them.
-for i in {$BREWADDS[@]}
-  if test [ brew list | grep "{$BREWADDS[$i]}"]
-  then
-    echo "{$BREWADDS[$i]} already installed. Checking next utility."
-  else
-    brew install {$BREWUTILS[$i]}
-    echo "Installing {$BREWADDS[$i]}."
-  fi
-
-# Install Web Development Tools
-echo "Installing web development tools."
-
-# Array of OSX Tools to Be Installed
-BREWWEB=("awscli", "foreman", "mysql", "node", "postgresql", "redis", "wp-cli")
-
-# Check if pakcages already installed. If not, install them.
-for i in {$BREWWEB[@]}
-  if test [ brew list | grep "{$BREWWEB[$i]}"]
-  then
-    echo "{$BREWUTILS[$i]} already installed. Checking next utility."
-  else
-    brew install {$BREWWEB[$i]}
-    echo "Installing {$BREWWEB[$i]}."
-  fi
-
-# Install Other Packages
-echo "Installing a few other packages."
-BREWOTHER=("imagemagick")
-
-# Check if pakcages already installed. If not, install them.
-for i in {$BREWOTHER[@]}
-  if test [ brew list | grep "{$BREWOTHER[$i]}"]
-  then
-    echo "{$BREWOTHER[$i]} already installed. Checking next utility."
-  else
-    brew install {$BREWOTHER[$i]}
-    echo "Installing {$BREWOTHER[$i]}."
-  fi
+done
 
 # brew install php56
 # brew install brew-php-switcher
