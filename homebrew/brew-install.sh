@@ -81,13 +81,6 @@ echo "Installing requested packages"
     fi
   done
 
-
-# brew install php56
-# brew install brew-php-switcher
-# brew install composer
-# brew install phpunit
-
-
 # Remove outdated versions from the cellar.
 brew cleanup
 
