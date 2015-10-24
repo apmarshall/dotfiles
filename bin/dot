@@ -9,5 +9,5 @@ export ZSH=$HOME/.dotfiles
 # Set OS X defaults
 $ZSH/osx/set-defaults.sh
 
-# Install homebrew packages
-$ZSH/homebrew/install.sh 2>&1
+# Run install scripts to update topics
+$ZSH/Script/install 2>&1
