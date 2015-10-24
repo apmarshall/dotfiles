@@ -1,0 +1,22 @@
+{
+"Topic Name": "Homebrew",
+"Taps": ["homebrew/dupes", "homebrew/versions"],
+"Packages": [
+  {
+    "Category": "OS X Utilities",
+    "Installs": ["coreutils", "findutils", "gnu-sed", "wget", "grep", "openssh", "git"]
+    },
+  {
+    "Category": "Add-On Tools",
+    "Installs": ["git-extras", "fasd", "bundler", "hub", "tmux", "the_silver_searcher"]
+    },
+  {
+    "Category": "Web Development Tools",
+    "Installs": ["awscli", "foreman", "mysql", "node", "postgresql", "redis", "wp-cli"]
+    },
+  {
+    "Category": "Other Packages",
+    "Installs": ["imagemagick"]
+    },
+  ]
+}
