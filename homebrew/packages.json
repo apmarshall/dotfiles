@@ -12,7 +12,7 @@
     },
   {
     "Category": "Web Development Tools",
-    "Installs": ["awscli", "foreman", "mysql", "node", "postgresql", "redis", "wp-cli"]
+    "Installs": ["awscli", "foreman", "node", "postgresql", "redis"]
     },
   {
     "Category": "Other Packages",
