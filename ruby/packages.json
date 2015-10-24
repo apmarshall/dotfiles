@@ -1,0 +1,14 @@
+{
+"Topic Name": "Ruby",
+"Taps": "",
+"Packages": [
+  {
+    "Category": "Ruby",
+    "Installs": "ruby"
+    },
+  {
+    "Category": "Ruby Helpers",
+    "Installs": ["rbenv", "ruby-build"]
+    }
+  ]
+}
