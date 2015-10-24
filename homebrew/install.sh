@@ -79,4 +79,7 @@ brew install ruby
 brew install ruby-build
 brew install wp-cli
 
+# Remove outdated versions from the cellar.
+brew cleanup
+
 exit 0
