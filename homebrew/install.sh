@@ -21,7 +21,7 @@ then
   
 fi
 
-# Ask for the administrator password upfront.
+# Ask for the administrator password
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
@@ -62,5 +62,21 @@ brew install grep
 brew install openssh
 brew install screen
 brew install php56
+brew install git
+
+# Install other tools
+brew install git-extras
+brew install magit
+brew install fasd
+
+# Install Web Development Tools
+brew install awscli
+brew install mysql
+brew install node
+brew install postgresql
+brew install redis
+brew install ruby
+brew install ruby-build
+brew install wp-cli
 
 exit 0
