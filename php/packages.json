@@ -1,6 +1,6 @@
 {
 "Topic Name": "PHP",
-"Taps": "homebrew/php",
+"Taps": ["homebrew/dupes", "homebrew/versions", "homebrew/php"],
 "Packages": [
   {
     "Category": "PHP Versions",
