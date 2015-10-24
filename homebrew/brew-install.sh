@@ -30,6 +30,8 @@ fi
 if test ! [ brew list | grep "jq" ]
 then
   brew install jq
+  echo "Installing jq"
+fi
 
 # Ask for the administrator password
 # sudo -v
