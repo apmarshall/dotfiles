@@ -3,6 +3,10 @@
 "Taps": ["homebrew/emacs"],
 "Packages": [
   {
+    "Category": "Emacs Core",
+    "Installs": "emacs --with-cocoa"
+  }
+  {
     "Category": "Emacs Extensions",
     "Installs": ["magit," "flycheck", "smex", "helm"]
     },
