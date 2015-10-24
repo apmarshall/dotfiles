@@ -1,0 +1,14 @@
+{
+"Topic Name": "Git",
+"Taps": "",
+"Packages": [
+  {
+    "Category": "Git",
+    "Installs": "git"
+    },
+  {
+    "Category": "Git Extensions",
+    "Installs": "git-extras"
+    }
+  ]
+}
