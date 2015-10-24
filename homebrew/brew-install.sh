@@ -48,8 +48,8 @@ echo "Updating existing formulae."
 brew upgrade --all
 
 # Find Kegs and Packages From JSON files
-BREWKEGS=$( find . -name packages.json | jq '[.Taps[]]')
-BREWPKGS=$( find . -name packages.josn | jq '[.Packages[.Installs[]]]')
+BREWKEGS=$( find ~/.dotfiles/ -name packages.json | jq '[.Taps[]]')
+BREWPKGS=$( find ~/.dotfiles/ -name packages.josn | jq '[.Packages[.Installs[]]]')
 
 # Tap needed kegs
 echo "Checking tapped kegs."
