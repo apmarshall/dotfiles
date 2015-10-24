@@ -45,34 +45,40 @@ brew update
 echo "Updating existing formulae."
 brew upgrade --all
 
+# Find Kegs and Packages From JSON files
+BREWKEGS=$( find . -name packages.json | jq '[.Taps[]]')
+BREWPKGS=$( find . -name packages.josn | jq '[.Packages[.Installs[]]]')
+
 # Tap needed kegs
 echo "Checking tapped kegs."
 
-find . -name packages.json | while read packages.json do
 # Check for already tapped kegs, tap the ones that aren't already tapped
-  for i in $(jq .Taps[])
-    if test [ brew tap | grep $(jq .Taps[$i] ]
-  then
-    echo "$(jq .Taps[$i]) already tapped. Checking next keg"
-  else
-    brew tap $(jq .Taps[i])
-    echo "Installing $(jq .Taps[i]"
-  fi
+  for i in ${$BREWKEGS[@]}
+  do
+    if test [ brew tap | grep {$BREWKEGS[$i]} ]
+    then
+      echo "{$BREWKEGS[$i]} already tapped. Checking next keg"
+    else
+      brew tap {$BREWKEGS[$i]}
+      echo "Tapping {$BREWKEGS[$i]}"
+    fi
+  done
 
 # Install needed packages
 echo "Installing requested packages"
 
 # Check for already installed packages, install the ones that aren't already installed
-for i in $(jq .Packages.Installs[])
-  if test [ brew list | grep $(jq .Packages.Installs[$i])]
-  then
-    echo "$(jq .Packages.Installs[$i]) already installed. Checking next utility."
-  else
-    brew install $(jq .Packages.Installs[$i])
-    echo "Installing $(jq .Packages.Installs[$i])."
-  fi
+  for i in ${$BREWPKGS[@]}
+  do
+    if test [ brew tap | grep {$BREWPKGS[@]} ]
+    then
+      echo "{$BREWKEGS[$i]} already installed. Checking next package"
+    else
+      brew install {$BREWPKGS[@]}
+      echo "Installing {$BREWPKGS[@]}"
+    fi
+  done
 
-done
 
 # brew install php56
 # brew install brew-php-switcher
