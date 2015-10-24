@@ -1,0 +1,22 @@
+{
+"Topic Name": "PHP",
+"Taps": "homebrew/php",
+"Packages": [
+  {
+    "Category": "PHP Versions",
+    "Installs": ["php55", "php56", "php70"]
+    },
+  {
+    "Category": "Testing Tools",
+    "Installs": ["brew-php-switcher", "phpunit"]
+    },
+  {
+    "Category": "Development Tools",
+    "Installs": ["wp-cli", "composer"]
+    },
+  {
+    "Category": "Databases",
+    "Installs": ["mysql", "mariadb"]
+    },
+  ]
+}
