@@ -84,8 +84,6 @@ brew install phpunit
 brew install postgresql
 brew install redis
 brew install ruby
-brew install rbenv
-brew install ruby-build
 brew install wp-cli
 
 # Remove outdated versions from the cellar.
