@@ -44,11 +44,11 @@ KEGS=("homebrew/dupes","homebrew/versions")
 # Check if Keg already tapped. If Not, tap it.
 for i in {$KEGS[@]}
   if test [ brew tap | grep '{$KEGS[$i]}' ]
+  then
     echo "{$KEGS[$i]} already tapped. Checking next keg"
-  else do
+  else
     brew tap {$KEGS[$i]}
     echo "Installing {$KEGS[$i]}"
-    done
   fi
 
 # Install Utilities (those that come with OS X are outdated).
@@ -61,11 +61,11 @@ BREWUTILS=("coreutils", "findutils", "gnu-sed", "wget", "grep", "openssh", "git"
 # Check if pakcages already installed. If not, install them.
 for i in {$BREWUTILS[@]}
   if test [ brew list | grep "{$BREWUTILS[$i]}"]
+  then
     echo "{$BREWUTILS[$i]} already installed. Checking next utility."
-  else do
+  else
     brew install {$BREWUTILS[$i]}
     echo "Installing {$BREWUTILS[$i]}."
-    done
   fi
 
 # Install Add-on Tools
@@ -77,11 +77,11 @@ BREWADDS=("git-extras", "fasd", "bundler", "hub", "tmux", "the_silver_searcher")
 # Check if pakcages already installed. If not, install them.
 for i in {$BREWADDS[@]}
   if test [ brew list | grep "{$BREWADDS[$i]}"]
+  then
     echo "{$BREWADDS[$i]} already installed. Checking next utility."
-  else do
+  else
     brew install {$BREWUTILS[$i]}
     echo "Installing {$BREWADDS[$i]}."
-    done
   fi
 
 # Install Web Development Tools
@@ -93,11 +93,11 @@ BREWWEB=("awscli", "foreman", "mysql", "node", "postgresql", "redis", "wp-cli")
 # Check if pakcages already installed. If not, install them.
 for i in {$BREWWEB[@]}
   if test [ brew list | grep "{$BREWWEB[$i]}"]
+  then
     echo "{$BREWUTILS[$i]} already installed. Checking next utility."
-  else do
+  else
     brew install {$BREWWEB[$i]}
     echo "Installing {$BREWWEB[$i]}."
-    done
   fi
 
 # Install Other Packages
@@ -107,11 +107,11 @@ BREWOTHER=("imagemagick")
 # Check if pakcages already installed. If not, install them.
 for i in {$BREWOTHER[@]}
   if test [ brew list | grep "{$BREWOTHER[$i]}"]
+  then
     echo "{$BREWOTHER[$i]} already installed. Checking next utility."
-  else do
+  else
     brew install {$BREWOTHER[$i]}
     echo "Installing {$BREWOTHER[$i]}."
-    done
   fi
 
 # brew install php56
