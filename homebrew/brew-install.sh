@@ -35,59 +35,90 @@ brew update
 echo "Updating existing formulae."
 brew upgrade --all
 
-# Tap appropriate kegs
-echo "Tapping needed kegs."
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/homebrew-php
+# Tap needed kegs
+echo "Checking tapped kegs."
 
-# Install GNU core utilities (those that come with OS X are outdated).
-# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+#Array of Kegs to Be Tapped
+KEGS=("homebrew/dupes","homebrew/versions")
+
+# Check if Keg already tapped. If Not, tap it.
+for i in {$KEGS[@]}
+  if test [ brew tap | grep '{$KEGS[$i]}' ]
+    echo "{$KEGS[$i]} already tapped. Checking next keg"
+  else do
+    brew tap {$KEGS[$i]}
+    echo "Installing {$KEGS[$i]}"
+    done
+  fi
+
+# Install Utilities (those that come with OS X are outdated).
+# ?? Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 echo "Installing Utilities."
-brew install coreutils
-# sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
-brew install moreutils
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-brew install findutils
-# Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
-# Install `wget` with IRI support.
-brew install wget --with-iri
 
-# Install more recent versions of some OS X tools.
-echo "Installing more recent version of some OS X tools."
-brew install grep
-brew install openssh
-brew install screen
-brew install php56
-brew install git
+# Array of OSX Tools to Be Installed
+BREWUTILS=("coreutils", "findutils", "gnu-sed", "wget", "grep", "openssh", "git")
+
+# Check if pakcages already installed. If not, install them.
+for i in {$BREWUTILS[@]}
+  if test [ brew list | grep "{$BREWUTILS[$i]}"]
+    echo "{$BREWUTILS[$i]} already installed. Checking next utility."
+  else do
+    brew install {$BREWUTILS[$i]}
+    echo "Installing {$BREWUTILS[$i]}."
+    done
+  fi
 
 # Install Add-on Tools
 echo "Installing extensions to tools you use."
-brew install git-extras
-brew install fasd
-brew install bundler
-brew install hub
-brew install tmux
-brew install the_silver_searcher
+
+# Array of OSX Tools to Be Installed
+BREWADDS=("git-extras", "fasd", "bundler", "hub", "tmux", "the_silver_searcher")
+
+# Check if pakcages already installed. If not, install them.
+for i in {$BREWADDS[@]}
+  if test [ brew list | grep "{$BREWADDS[$i]}"]
+    echo "{$BREWADDS[$i]} already installed. Checking next utility."
+  else do
+    brew install {$BREWUTILS[$i]}
+    echo "Installing {$BREWADDS[$i]}."
+    done
+  fi
 
 # Install Web Development Tools
 echo "Installing web development tools."
-brew install awscli
-brew install brew-php-switcher
-brew install composer
-brew install foreman
-brew install mysql
-brew install node
-brew install phpunit
-brew install postgresql
-brew install redis
-brew install ruby
-brew install wp-cli
+
+# Array of OSX Tools to Be Installed
+BREWWEB=("awscli", "foreman", "mysql", "node", "postgresql", "redis", "wp-cli")
+
+# Check if pakcages already installed. If not, install them.
+for i in {$BREWWEB[@]}
+  if test [ brew list | grep "{$BREWWEB[$i]}"]
+    echo "{$BREWUTILS[$i]} already installed. Checking next utility."
+  else do
+    brew install {$BREWWEB[$i]}
+    echo "Installing {$BREWWEB[$i]}."
+    done
+  fi
 
 # Install Other Packages
 echo "Installing a few other packages."
-brew install imagemagick
+BREWOTHER=("imagemagick")
+
+# Check if pakcages already installed. If not, install them.
+for i in {$BREWOTHER[@]}
+  if test [ brew list | grep "{$BREWOTHER[$i]}"]
+    echo "{$BREWOTHER[$i]} already installed. Checking next utility."
+  else do
+    brew install {$BREWOTHER[$i]}
+    echo "Installing {$BREWOTHER[$i]}."
+    done
+  fi
+
+# brew install php56
+# brew install brew-php-switcher
+# brew install composer
+# brew install phpunit
+
 
 # Remove outdated versions from the cellar.
 brew cleanup
