@@ -1,6 +1,6 @@
-# holman does dotfiles
+# A variation on Holman Does Dotfiles
 
-## dotfiles
+## The Rationale From @holman:
 
 Your dotfiles are how you personalize your system. These are mine.
 
@@ -14,12 +14,16 @@ If you're interested in the philosophy behind why projects like these are
 awesome, you might want to [read my post on the
 subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 
+## What I'm Doing Different
+
+Their are a few cosmetic changes to this (I use emacs instead of atom, for instance), but the biggest philosophical change has to do with how we install packages. Rather than just list all the installed pakcages, I started off using install.sh scripts for each topic which did some conditional checks similar to what Holman has set up for rben and ruby-build in his version. I then realized this was getting really repetitive. So to simplify, brew-install.sh now has two simple loops: one checking for needed taps and the other installing formulae. These loops get fed inputs from JSON files listing the packages we want under each topic. This keeps the essance of Holman's topical system intact while also keeping our scripts a lot more DRY.
+
 ## install
 
 Run this:
 
 ```sh
-git clone https://github.com/holman/dotfiles.git ~/.dotfiles
+git clone https://github.com/apmarshall/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
@@ -66,23 +70,19 @@ There's a few special files in the hierarchy.
   your `$HOME`. This is so you can keep all of those versioned in your dotfiles
   but still keep those autoloaded files in your home directory. These get
   symlinked in when you run `script/bootstrap`.
+- **topic/packages.json**: This contains a list of the Homebrew taps and packages you need for each topic, logically organized for easy editing and modification. brew-install.sh uses jq to create arrays based on what you put in the JSON files to know what to install each time it runs.
 
 ## bugs
 
-I want this to work for everyone; that means when you clone it down it should
-work for you even though you may not have `rbenv` installed, for example. That
-said, I do use this as *my* dotfiles, so there's a good chance I may break
-something if I forget to make a check for a dependency.
+These dotfiles are being actively used, so if you fork them read them and see what you need to change for your own personal set-up.
 
-If you're brand-new to the project and run into any blockers, please
-[open an issue](https://github.com/holman/dotfiles/issues) on this repository
-and I'd love to get it fixed for you!
+You can lodge issues on the original Holman repository:
+[open an issue](https://github.com/holman/dotfiles/issues) or on this repository.
 
 ## thanks
 
-I forked [Ryan Bates](http://github.com/ryanb)' excellent
-[dotfiles](http://github.com/ryanb/dotfiles) for a couple years before the
-weight of my changes and tweaks inspired me to finally roll my own. But Ryan's
-dotfiles were an easy way to get into bash customization, and then to jump ship
-to zsh a bit later. A decent amount of the code in these dotfiles stem or are
-inspired from Ryan's original project.
+[Zach Holman](https://github.com/holman)
+[Mathias Bynens](https://github.com/mathiasbynens)
+[Ryan Bates](http://github.com/ryanb)
+[Oh-my-Zsh](https://github.com/robbyrussell/oh-my-zsh)
+
