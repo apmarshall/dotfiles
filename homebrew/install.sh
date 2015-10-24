@@ -67,17 +67,24 @@ brew install fasd
 brew install php-mode
 brew install web-mode
 brew install markdown-mode
+brew install bundler
+brew install hub
+brew install imagemagick
+brew install tmux
+brew install the_silver_searcher
 
 # Install Web Development Tools
 brew install awscli
 brew install brew-php-switcher
 brew install composer
+brew install foreman
 brew install mysql
 brew install node
 brew install phpunit
 brew install postgresql
 brew install redis
 brew install ruby
+brew install rbenv
 brew install ruby-build
 brew install wp-cli
 
