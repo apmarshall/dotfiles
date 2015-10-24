@@ -5,10 +5,16 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
-# Set Directory
-export ZSH=$HOME/.dotfiles
-
 set -e
+
+# Ask for the administrator password
+ sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until the script has finished.
+ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Chown usr/local to get around the new SIP issues
+sudo chown -R $(whoami):admin /usr/local
 
 # Check for Homebrew
 if test ! $(which brew)
@@ -32,12 +38,6 @@ then
   brew install jq
   echo "Installing jq"
 fi
-
-# Ask for the administrator password
-# sudo -v
-
-# Keep-alive: update existing `sudo` time stamp until the script has finished.
-# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Make sure we’re using the latest Homebrew.
 echo "Making sure Homebrew is up to date."
