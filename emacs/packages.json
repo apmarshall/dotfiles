@@ -1,0 +1,14 @@
+{
+"Topic Name": "emacs",
+"Taps": ["homebrew/emacs"],
+"Packages": [
+  {
+    "Category": "Emacs Extensions",
+    "Installs": ["magit," "flycheck", "smex", "helm"]
+    },
+  {
+    "Category": "Emacs Modes",
+    "Installs": ["markdown-mode", "php-mode", "web-mode"]
+    }
+  ]
+}
