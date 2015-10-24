@@ -37,11 +37,7 @@ brew upgrade --all
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
-brew tap homebrew/apache
-brew tap homebrew/nginx
-brew tap homebrew/completions
 brew tap homebrew/emacs
-brew tap homebrew/patches
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -64,15 +60,21 @@ brew install screen
 brew install php56
 brew install git
 
-# Install other tools
+# Install Add-on Tools
 brew install git-extras
 brew install magit
 brew install fasd
+brew install php-mode
+brew install web-mode
+brew install markdown-mode
 
 # Install Web Development Tools
 brew install awscli
+brew install brew-php-switcher
+brew install composer
 brew install mysql
 brew install node
+brew install phpunit
 brew install postgresql
 brew install redis
 brew install ruby
