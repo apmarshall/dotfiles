@@ -45,8 +45,8 @@ echo "Making sure Homebrew is up to date."
 brew update
 
 # Upgrade any already-installed formulae.
-echo "Updating existing formulae."
-brew upgrade --all
+# echo "Updating existing formulae."
+# brew upgrade --all
 
 # Find Kegs and Packages From JSON files
 BREWKEGS=$( find ~/.dotfiles/ -name packages.json | jq '[.Taps[]]')
