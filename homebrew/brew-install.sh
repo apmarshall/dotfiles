@@ -13,8 +13,9 @@ set -e
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Chown usr/local to get around the new SIP issues
+# Fix permissions issues that might stop Homebrew from working
 sudo chown -R $(whoami):admin /usr/local
+sudo chown -R $(whoami):admin $(brew --cache)
 
 # Check for Homebrew
 if test ! $(which brew)
