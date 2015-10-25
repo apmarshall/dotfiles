@@ -46,7 +46,7 @@ set -e
 # Check that jq is installed. If not, install it.
 echo "Checking for needed packages"
 
-CHECKREQ=$(brew list -1 | grep "jq")
+CHECKREQ=$(brew list | grep "jq")
 
 echo "Already installed packages:" $CHECKREQ
 
