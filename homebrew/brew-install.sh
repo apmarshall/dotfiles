@@ -32,17 +32,23 @@ then
   
 fi
 
-# Check that jq is installed. If not, install it.
-TESTJQ=$(brew list | grep -q "jq")
-if test ! $TESTJQ = 0
-then
-  brew install jq
-  echo "Installing jq"
-fi
-
 # Make sure we’re using the latest Homebrew.
 echo "Making sure Homebrew is up to date."
 brew update
+
+# Check that jq is installed. If not, install it.
+echo "Checking for needed packages"
+
+CHECKREQ=$(brew list -1 | grep "jq")
+
+echo "Already installed packages:" $CHECKREQ
+
+if [ "$CHECKREQ" == "jq" ]; then
+	echo 'JQ already installed'
+else
+	echo "Installing JQ"
+	brew install jq
+fi
 
 # Upgrade any already-installed formulae.
 # echo "Updating existing formulae."
