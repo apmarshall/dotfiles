@@ -33,7 +33,7 @@ then
 fi
 
 # Check that jq is installed. If not, install it.
-if test ! [ brew list | grep "jq" ]
+if test ! [ brew list | grep -q "jq" ]
 then
   brew install jq
   echo "Installing jq"
@@ -57,7 +57,7 @@ echo "Checking tapped kegs."
 # Check for already tapped kegs, tap the ones that aren't already tapped
   for i in ${$BREWKEGS[@]}
   do
-    if test [ brew tap | grep {$BREWKEGS[$i]} ]
+    if test [ brew tap | grep -q "{$BREWKEGS[$i]}" ]
     then
       echo "{$BREWKEGS[$i]} already tapped. Checking next keg"
     else
@@ -72,7 +72,7 @@ echo "Installing requested packages"
 # Check for already installed packages, install the ones that aren't already installed
   for i in ${$BREWPKGS[@]}
   do
-    if test [ brew tap | grep {$BREWPKGS[@]} ]
+    if test [ brew tap | grep -q "{$BREWPKGS[@]}" ]
     then
       echo "{$BREWKEGS[$i]} already installed. Checking next package"
     else
