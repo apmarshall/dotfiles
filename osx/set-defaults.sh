@@ -392,9 +392,13 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Terminal & iTerm 2                                                          #
 ###############################################################################
 
-# Set default shell to Zsh
-chsh -s $(which zsh)
-
+# If this user's login shell is not already "zsh", attempt to switch.
+TEST_CURRENT_SHELL=$(expr "$SHELL" : '.*/\(.*\)')
+if [ "$TEST_CURRENT_SHELL" != "zsh" ]; 
+then
+	chsh -s $(which zsh)
+fi
+	
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
