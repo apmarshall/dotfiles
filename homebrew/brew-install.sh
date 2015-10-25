@@ -14,10 +14,12 @@ set -e
  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Fix permissions issues that might stop Homebrew from working
+echo "Checking that Homebrew has the permissions it needs to work"
+echo "Checking usr/local"
 sudo chown -R $(whoami):admin /usr/local
-sudo chown -R $(whoami):admin $(brew --cache)
 
 # Check for Homebrew
+echo "Checking for Homebrew."
 if test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
@@ -32,6 +34,10 @@ then
   fi
   
 fi
+echo "Homebrew is installed."
+
+echo "Checking permissions for the Homebrew cache"
+sudo chown -R $(whoami):admin $(brew --cache)
 
 # Make sure we’re using the latest Homebrew.
 echo "Making sure Homebrew is up to date."
@@ -56,11 +62,12 @@ fi
 # brew upgrade --all
 
 # Find Kegs and Packages From JSON files
+# echo "Finding requested kegs and packages."
 # BREWKEGS=$( find ~/.dotfiles/ -name packages.json | jq '[.Taps[]]')
 # BREWPKGS=$( find ~/.dotfiles/ -name packages.josn | jq '[.Packages[.Installs[]]]')
 
 # Tap needed kegs
-#echo "Checking tapped kegs."
+#echo "Checking if kegs are tapped."
 
 # Check for already tapped kegs, tap the ones that aren't already tapped
 #  for i in ${$BREWKEGS[@]}
@@ -76,7 +83,7 @@ fi
 #  done
 
 # Install needed packages
-# echo "Installing requested packages"
+# echo "Checking if packages are installed."
 
 # Check for already installed packages, install the ones that aren't already installed
 #  for i in ${$BREWPKGS[@]}
@@ -92,6 +99,7 @@ fi
 #  done
 
 # Remove outdated versions from the cellar.
+# echo "Cleaning up outdated versions."
 # brew cleanup
 
 echo "All packages installed."
