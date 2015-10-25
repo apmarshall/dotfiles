@@ -56,43 +56,43 @@ fi
 # brew upgrade --all
 
 # Find Kegs and Packages From JSON files
-BREWKEGS=$( find ~/.dotfiles/ -name packages.json | jq '[.Taps[]]')
-BREWPKGS=$( find ~/.dotfiles/ -name packages.josn | jq '[.Packages[.Installs[]]]')
+# BREWKEGS=$( find ~/.dotfiles/ -name packages.json | jq '[.Taps[]]')
+# BREWPKGS=$( find ~/.dotfiles/ -name packages.josn | jq '[.Packages[.Installs[]]]')
 
 # Tap needed kegs
-echo "Checking tapped kegs."
+#echo "Checking tapped kegs."
 
 # Check for already tapped kegs, tap the ones that aren't already tapped
-  for i in ${$BREWKEGS[@]}
-  do
-   TESTKEG=$(brew tap | grep -q "{$BREWKEGS[$i]}")
-    if test $TESTKEG = 0
-    then
-      echo "{$BREWKEGS[$i]} already tapped. Checking next keg"
-    else
-      brew tap {$BREWKEGS[$i]}
-      echo "Tapping {$BREWKEGS[$i]}"
-    fi
-  done
+#  for i in ${$BREWKEGS[@]}
+#  do
+#   TESTKEG=$(brew tap | grep -q "{$BREWKEGS[$i]}")
+#    if test $TESTKEG = 0
+#    then
+#      echo "{$BREWKEGS[$i]} already tapped. Checking next keg"
+#    else
+#      brew tap {$BREWKEGS[$i]}
+#      echo "Tapping {$BREWKEGS[$i]}"
+#    fi
+#  done
 
 # Install needed packages
-echo "Installing requested packages"
+# echo "Installing requested packages"
 
 # Check for already installed packages, install the ones that aren't already installed
-  for i in ${$BREWPKGS[@]}
-  do
-   TESTPKG=$(brew tap | grep -q "{$BREWPKGS[@]}")
-    if test $TESTPKG = 0
-    then
-      echo "{$BREWKEGS[$i]} already installed. Checking next package"
-    else
-      brew install {$BREWPKGS[@]}
-      echo "Installing {$BREWPKGS[@]}"
-    fi
-  done
+#  for i in ${$BREWPKGS[@]}
+#  do
+#   TESTPKG=$(brew tap | grep -q "{$BREWPKGS[@]}")
+#    if test $TESTPKG = 0
+#    then
+#      echo "{$BREWKEGS[$i]} already installed. Checking next package"
+#    else
+#      brew install {$BREWPKGS[@]}
+#      echo "Installing {$BREWPKGS[@]}"
+#    fi
+#  done
 
 # Remove outdated versions from the cellar.
-brew cleanup
+# brew cleanup
 
 echo "All packages installed."
 
