@@ -402,19 +402,51 @@ fi
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
-# Use a modified version of the Solarized Dark theme by default in Terminal.app
+# Add Solarized Dark Theme to Terminal.app
 #osascript <<EOD
 #tell application "Terminal"
 #	local allOpenedWindows
 #	local initialOpenedWindows
 #	local windowID
-#	set themeName to "Solarized Dark xterm-256color"
+#	set themeName to "SolarizedDarkansi"
 #	(* Store the IDs of all the open terminal windows. *)
 #	set initialOpenedWindows to id of every window
 #	(* Open the custom theme so that it gets added to the list
 #	   of available terminal themes (note: this will open two
 #	   additional terminal windows). *)
-#	do shell script "open '$HOME/init/" & themeName & ".terminal'"
+#	do shell script "open '$HOME/.dotfiles/osx/" & themeName & ".terminal'"
+#	(* Wait a little bit to ensure that the custom theme is added. *)
+#	(* Get the IDs of all the currently opened terminal windows. *)
+#	set allOpenedWindows to id of every window
+#	repeat with windowID in allOpenedWindows
+#		(* Close the additional windows that were opened in order
+#		   to add the custom theme to the list of terminal themes. *)
+#		if initialOpenedWindows does not contain windowID then
+#			close (every window whose id is windowID)
+#		(* Change the theme for the initial opened terminal windows
+#		   to remove the need to close them in order for the custom
+#		   theme to be applied. *)
+#		else
+#			set current settings of tabs of (every window whose id is windowID) to settings set themeName
+#		end if
+#	end repeat
+#end tell
+#EOD
+
+
+# Use the Solarized Light theme by default in Terminal.app
+#osascript <<EOD
+#tell application "Terminal"
+#	local allOpenedWindows
+#	local initialOpenedWindows
+#	local windowID
+#	set themeName to "SolarizedLightansi"
+#	(* Store the IDs of all the open terminal windows. *)
+#	set initialOpenedWindows to id of every window
+#	(* Open the custom theme so that it gets added to the list
+#	   of available terminal themes (note: this will open two
+#	   additional terminal windows). *)
+#	do shell script "open '$HOME/.dotfiles/osx/" & themeName & ".terminal'"
 #	(* Wait a little bit to ensure that the custom theme is added. *)
 #	(* Set the custom theme as the default terminal theme. *)
 #	set default settings to settings set themeName
@@ -436,7 +468,8 @@ defaults write com.apple.terminal StringEncodings -array 4
 #EOD
 
 # Install the Solarized Dark theme for iTerm
-# open "${HOME}/init/Solarized Dark.itermcolors"
+# open "${HOME}/.dotfiles/osx/SolarizedDark.itermcolors"
+# open "${HOME}/.dotfiles/osx/SolarizedLight.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 # defaults write com.googlecode.iterm2 PromptOnQuit -bool false
