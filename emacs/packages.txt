@@ -1,0 +1,1 @@
+emacs --with-cocoa magit flycheck smex helm markdown-mode php-mode web-mode
