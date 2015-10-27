@@ -2,21 +2,13 @@
 
 # Modified from ~/.osx — https://mths.be/osx
 # Meant to be included in my personal version of dotfiles by @holman
-
-# Ask for the administrator password upfront
-sudo -v
+# This version runs for standard users, doesn't require sudo
 
 echo "Checking your system defaults."
-
-# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
-
-# Disable the sound effects on boot
-# sudo nvram SystemAudioVolume=" "
 
 # Set highlight color to green
 # defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
@@ -48,39 +40,6 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-# Reveal IP address, hostname, OS version, etc. when clicking the clock
-# in the login window
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-
-# Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
-
-# Never go into computer sleep mode
-# sudo systemsetup -setcomputersleep Off > /dev/null
-
-# Check for software updates daily, not just once per week
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
-
-###############################################################################
-# SSD-specific tweaks                                                         #
-###############################################################################
-
-# Disable local Time Machine snapshots
-# sudo tmutil disablelocal
-
-# Disable hibernation (speeds up entering sleep mode)
-# sudo pmset -a hibernatemode 0
-
-# Remove the sleep image file to save disk space
-# sudo rm /private/var/vm/sleepimage
-# Create a zero-byte file instead…
-# sudo touch /private/var/vm/sleepimage
-# …and make sure it can’t be rewritten
-# sudo chflags uchg /private/var/vm/sleepimage
-
-# Disable the sudden motion sensor as it’s not useful for SSDs
-# sudo pmset -a sms 0
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -214,9 +173,6 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
-# Enable the MacBook Air SuperDrive on any Mac
-# sudo nvram boot-args="mbasd=1"
-
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
@@ -271,9 +227,6 @@ defaults write com.apple.dock showhidden -bool true
 
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
 #defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
-
-# Add iOS Simulator to Launchpad
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app" "/Applications/iOS Simulator.app"
 
 # Hot corners
 # Possible values:
@@ -480,9 +433,6 @@ defaults write com.apple.terminal StringEncodings -array 4
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-# Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Activity Monitor                                                            #
