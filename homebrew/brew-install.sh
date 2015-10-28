@@ -63,7 +63,7 @@ brew update
 
 # Find Kegs and Packages From JSON files
 echo "Finding requested kegs."
-BREWKEGS=$( find ~/.dotfiles/ -name packages.json | jq '[.Taps[]]')
+BREWKEGS=$(cat ~/.dotfiles/*/taps.txt)
 
 # Tap needed kegs
 echo "Checking if kegs are tapped."
@@ -82,7 +82,7 @@ done
 
 # Install needed packages
 echo "Finding requested packages."
-BREWPKGS=$( find ~/.dotfiles/ -name packages.josn | jq '[.Packages[.Installs[]]]')
+BREWPKGS=$(cat ~/.dotfiles/*/packages.txt)
 
 echo "Checking if packages are installed."
 
