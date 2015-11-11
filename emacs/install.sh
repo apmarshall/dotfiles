@@ -1,5 +1,7 @@
-# Create Emacs init.el file
-echo '(let ((default-directory "/usr/local/share/emacs/site-lisp/"))
-  (normal-top-level-add-subdirs-to-load-path))' > ~/.emacs.d/init.el
+#! bin/bash
+# System Link init.el file
+DOTFILES=${HOME}/.dotfiles/
+
+ln -s $DOTFILES/emacs/init.el.sample ${HOME}/.emacs.d/init.el
 
 exit 0

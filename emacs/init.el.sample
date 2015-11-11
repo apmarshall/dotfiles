@@ -1,0 +1,36 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
+(let ((default-directory "/usr/local/share/emacs/site-lisp/"))
+  (normal-top-level-add-subdirs-to-load-path))
+
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(require 'smex)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-x C-M") 'smex-major-mode-commands)
+
+(require 'magit)
+
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list
+	       "~/.emacs.d/site-lisp/magit/Documentation/"))
+
+(require 'php-mode)
+(add-to-list 'auto-mode-alist '("\.php$" . php-mode))
+
+(require 'markdown-mode)
+(add-to-list 'auto-mode-alist '("\.md$" . markdown-mode))
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\.html$" . web-mode))
+
+(provide 'init)
+
+;;; init.el ends here
