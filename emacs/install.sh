@@ -1,4 +1,3 @@
-#! bin/bash
 # System Link init.el file
 DOTFILES=${HOME}/.dotfiles/
 
