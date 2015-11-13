@@ -61,43 +61,57 @@ brew update
 #echo "Updating existing formulae."
 #brew upgrade --all
 
-# Find Kegs and Packages From JSON files
+# Find Needed Kegs in  txt files
 echo "Finding requested kegs."
-BREWKEGS=$(cat ~/.dotfiles/*/taps.txt)
+KEGFILES=$(find ~/.dotfiles/*/taps.txt)
+for file in $KEGFILES[@]; do
+    declare -a kegsArray
+    let i=0
+    while IFS=$'\n' read -r line_data; do
+	$kegsArray[$i]="$(line_data)"
+	((++i))
+    done < $KEGFILES[$file]
 
-# Tap needed kegs
-echo "Checking if kegs are tapped."
-
-# Check for already tapped kegs, tap the ones that aren't already tapped
-for i in ${$BREWKEGS[@]} do
-   TESTKEG=$(brew tap | grep "{$BREWKEGS[$i]}")
-    if test $TESTKEG = $BREWKEGS[$i]
-    then
-      echo "{$BREWKEGS[$i]} already tapped. Checking next keg"
-    else
-      brew tap {$BREWKEGS[$i]}
-      echo "Tapping {$BREWKEGS[$i]}"
-    fi
+    #Tap Needed kegs
+    echo "Checking if kegs are tapped."
+    for i in $kegsArray[@]; do
+	TESTKEG=$(brew tap | grep "{$kegsArray[$i]}"
+	      if test $TESTKEG = $kegsArray[$i]
+		  then
+		      echo "{$kegsArray[$i]} already tapped. Checking next keg."
+		  else
+		      brew tap {$kegsArray[$i]}
+		      echo "Tapping {$kegsArray[$i]}"
+		  fi
+     done
 done
-
-# Install needed packages
+		  
+# Find Needed Packages in txt files
 echo "Finding requested packages."
-BREWPKGS=$(cat ~/.dotfiles/*/packages.txt)
+PKGSFILES=$(find ${HOME}/.dotfiles/*/packages.txt)
+for file in $PKGSFILES[@]; do
+     delcare -a packagesArray
+     let i=0
+     while IFS=$'\n' read -r line_data; do
+	 $packagesArray[$i]="${line_data}"
+	 ((i++))
+     done < $PKGSFILES[$file]
 
-echo "Checking if packages are installed."
+     # Install needed packages
+     echo "Checking if packages are installed."
 
-# Check for already installed packages, install the ones that aren't already installed
-for i in ${$BREWPKGS[@]} do
-   TESTPKG=$(brew tap | grep "{$BREWPKGS[$i]}")
-   if test $TESTPKG = $BREWPKGS[$i] 
-   then
-      echo "{$BREWKEGS[$i]} already installed. Checking next package"
-   else
-      brew install {$BREWPKGS[$i}
-      echo "Installing {$BREWPKGS[$i]}"
-   fi
+     for i in ${$packagesArray[@]} do
+	      TESTPKG=$(brew tap | grep "{$packagesArray[$i]}")
+	      if test $TESTPKG = $packagesArray[$i]
+	      then
+		  echo "{$packagesArray[$i]} already installed. Checking next package"
+	      else
+		  brew install {$packagesArray[$i}
+		  echo "Installing {$packagesArray[$i]}"
+	      fi
+      done
 done
-
+				
 # Remove outdated versions from the cellar.
 echo "Cleaning up outdated versions."
 brew cleanup
