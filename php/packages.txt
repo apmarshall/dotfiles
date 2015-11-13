@@ -1,1 +1,8 @@
-php56 brew-php-switcher phpunit wp-cli composer mysql perconadb mariadb
+php56
+brew-php-switcher
+phpunit
+wp-cli
+composer
+mysql
+perconadb
+mariadb

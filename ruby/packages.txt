@@ -1,1 +1,3 @@
-ruby rbenv fruby-build
+ruby
+rbenv
+fruby-build

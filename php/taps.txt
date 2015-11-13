@@ -1,1 +1,3 @@
-homebrew/dupes homebrew/versions homebrew/php
+homebrew/dupes
+homebrew/versions
+homebrew/php

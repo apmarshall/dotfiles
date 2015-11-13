@@ -1,1 +1,17 @@
-coreutils findutils gnu-sed wget grep openssh fasd bundler hub tmux the_silver_searcher awscli foreman node postgresql redis imagemagick
+coreutils
+findutils
+gnu-sed
+wget
+grep
+openssh
+fasd
+bundler
+hub
+tmux
+the_silver_searcher
+awscli
+foreman
+node
+postgresql
+redis
+imagemagick
