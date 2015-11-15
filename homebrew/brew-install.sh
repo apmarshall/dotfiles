@@ -43,23 +43,9 @@ sudo chown -R $(whoami):admin $(brew --cache)
 echo "Making sure Homebrew is up to date."
 brew update
 
-# Check that jq is installed. If not, install it.
-#echo "Checking for needed packages"
-
-#CHECKREQ=$(brew list | grep "jq")
-
-#echo "Already installed packages:" $CHECKREQ
-
-#if [ "$CHECKREQ" == "jq" ]; then
-#	echo 'JQ already installed'
-#else
-#	echo "Installing JQ"
-#	brew install jq
-#fi
-
 # Upgrade any already-installed formulae.
-#echo "Updating existing formulae."
-#brew upgrade --all
+echo "Updating existing formulae."
+brew upgrade --all
 
 # Find Needed Kegs in  txt files
 echo "Finding requested kegs."
@@ -73,17 +59,10 @@ for file in $KEGFILES[@]; do
     done < $KEGFILES[$file]
 
     #Tap Needed kegs
-    echo "Checking if kegs are tapped."
+    echo "Tapping requested kegs."
     for i in $kegsArray[@]; do
-	TESTKEG=$(brew tap | grep "{$kegsArray[$i]}"
-	      if test $TESTKEG = $kegsArray[$i]
-		  then
-		      echo "{$kegsArray[$i]} already tapped. Checking next keg."
-		  else
-		      brew tap {$kegsArray[$i]}
-		      echo "Tapping {$kegsArray[$i]}"
-		  fi
-     done
+        brew tap {$kegsArray[$i]}
+    done
 done
 		  
 # Find Needed Packages in txt files
@@ -98,18 +77,11 @@ for file in $PKGSFILES[@]; do
      done < $PKGSFILES[$file]
 
      # Install needed packages
-     echo "Checking if packages are installed."
+     echo "Installing requested packages."
 
-     for i in ${$packagesArray[@]} do
-	      TESTPKG=$(brew tap | grep "{$packagesArray[$i]}")
-	      if test $TESTPKG = $packagesArray[$i]
-	      then
-		  echo "{$packagesArray[$i]} already installed. Checking next package"
-	      else
-		  brew install {$packagesArray[$i}
-		  echo "Installing {$packagesArray[$i]}"
-	      fi
-      done
+     for i in ${$packagesArray[@]}; do
+	 brew install {$packagesArray[$i}
+     done
 done
 				
 # Remove outdated versions from the cellar.
