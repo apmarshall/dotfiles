@@ -1,0 +1,21 @@
+#! bin/bash
+
+# Pulls down changes for all our version controlled software from the latest builds.
+
+# Set to 1 for more verbose output:
+let verbose=0
+
+# Find git repos and loop over them:
+for repo in `find . -type d -name ".git"`
+do
+    # cd to the dir that contains .git/:
+        dir=`echo ${repo} | sed -e 's/\/.git/\//'`
+	    cd ${dir}
+
+	    if (git remote -v | grep "upstream") do
+	       git checkout nightly
+	       git fetch upstream
+	       git list >> $HOME/Code/nightly-review.txt
+	       git merge upstream/master nightly
+	    done
+done

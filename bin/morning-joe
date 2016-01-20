@@ -1,0 +1,5 @@
+#! bin/bash
+
+# Updates all our homebrew installations
+
+brew update && brew upgrade
