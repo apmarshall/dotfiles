@@ -9,7 +9,6 @@
 
 (add-to-list 'custom-theme-load-path "/usr/local/share/emacs/site-lisp/solarized-emacs/")
 (load-theme 'solarized t)
-(setq solarized-termcolors 256)
 
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
