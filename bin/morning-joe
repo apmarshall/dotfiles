@@ -2,4 +2,4 @@
 
 # Updates all our homebrew installations
 
-brew update && brew upgrade 2>&1 $HOME/Code/morning-joe.txt
+brew update && brew upgrade
