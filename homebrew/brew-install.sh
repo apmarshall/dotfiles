@@ -13,11 +13,6 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Fix permissions issues that might stop Homebrew from working
-echo "Checking that Homebrew has the permissions it needs to work"
-echo "Checking usr/local"
-sudo chown -R $(whoami):admin /usr/local
-
 # Check for Homebrew
 echo "Checking for Homebrew."
 if test ! $(which brew)
