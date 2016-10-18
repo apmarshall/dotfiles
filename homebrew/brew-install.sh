@@ -42,42 +42,13 @@ brew update
 echo "Updating existing formulae."
 brew upgrade --all
 
-# Find Needed Kegs in  txt files
-echo "Finding requested kegs."
-KEGFILES=$(find ~/.dotfiles/*/taps.txt)
-for file in $KEGFILES[@]; do
-    declare -a kegsArray
-    let i=0
-    while IFS=$'\n' read -r line_data; do
-	$kegsArray[$i]="$(line_data)"
-	((++i))
-    done < $KEGFILES[$file]
+# Install a few needed packages
+echo "Installing preliminary packages"
+brew install python3
+brew install rcmdnk/file/brew-file
 
-    #Tap Needed kegs
-    echo "Tapping requested kegs."
-    for i in $kegsArray[@]; do
-        brew tap {$kegsArray[$i]}
-    done
-done
-		  
-# Find Needed Packages in txt files
-echo "Finding requested packages."
-PKGSFILES=$(find ${HOME}/.dotfiles/*/packages.txt)
-for file in $PKGSFILES[@]; do
-     delcare -a packagesArray
-     let i=0
-     while IFS=$'\n' read -r line_data; do
-	 $packagesArray[$i]="${line_data}"
-	 ((i++))
-     done < $PKGSFILES[$file]
-
-     # Install needed packages
-     echo "Installing requested packages."
-
-     for i in ${$packagesArray[@]}; do
-	 brew install {$packagesArray[$i}
-     done
-done
+# Install all requested packages
+brew file install
 				
 # Remove outdated versions from the cellar.
 echo "Cleaning up outdated versions."
