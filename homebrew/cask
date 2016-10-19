@@ -5,7 +5,6 @@ tap caskroom/cask
 cask atom
 cask brackets
 cask cyberduck
-# cask dropbox # does not appear to work
 cask gimp
 cask google-chrome
 cask google-drive
@@ -19,6 +18,7 @@ cask notion
 cask opera
 cask pixate-studio
 cask pixlr
+cask polymail
 cask postman
 cask rescuetime
 cask screenhero
