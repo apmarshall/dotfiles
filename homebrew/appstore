@@ -2,26 +2,26 @@
 brew mas
 
 # Apps installed from AppStore
-405843582 Alfred #/Applications/Alfred.app
-557945049 BeanCounter #/Applications/BeanCounter.app
-902111700 Blogo #/Applications/Blogo.app
-433335799 CodeRunner #/Applications/CodeRunner.app
-458034879 Dash #/Applications/Dash.app
-406056744 Evernote #/Applications/Evernote.app
-906164672 Form #/Applications/Form.app
-682658836 GarageBand #/Applications/GarageBand.app
-490152466 iBooks Author #/Applications/iBooks Author.app
-408981434 iMovie #/Applications/iMovie.app
-408981381 iPhoto #/Applications/iPhoto.app
-884952790 iTranslate #/Applications/iTranslate.app
-409183694 Keynote #/Applications/Keynote.app
-405399194 Kindle #/Applications/Kindle.app
-402397683 MindNode Lite #/Applications/MindNode Lite.app
-409203825 Numbers #/Applications/Numbers.app
-409201541 Pages #/Applications/Pages.app
-568494494 Pocket #/Applications/Pocket.app
-948415170 Pushbullet #/Applications/Pushbullet.app
-692867256 Simplenote #/Applications/Simplenote.app
-507257563 Sip #/Applications/Sip.app
-404010395 TextWrangler #/Applications/TextWrangler.app
-497799835 Xcode #/Applications/Xcode.app
+appstore 405843582 Alfred #/Applications/Alfred.app
+appstore 557945049 BeanCounter #/Applications/BeanCounter.app
+appstore 902111700 Blogo #/Applications/Blogo.app
+appstore 433335799 CodeRunner #/Applications/CodeRunner.app
+appstore 458034879 Dash #/Applications/Dash.app
+appstore 406056744 Evernote #/Applications/Evernote.app
+appstore 906164672 Form #/Applications/Form.app
+appstore 682658836 GarageBand #/Applications/GarageBand.app
+appstore 490152466 iBooks Author #/Applications/iBooks Author.app
+appstore 408981434 iMovie #/Applications/iMovie.app
+appstore 408981381 iPhoto #/Applications/iPhoto.app
+appstore 884952790 iTranslate #/Applications/iTranslate.app
+appstore 409183694 Keynote #/Applications/Keynote.app
+appstore 405399194 Kindle #/Applications/Kindle.app
+appstore 402397683 MindNode Lite #/Applications/MindNode Lite.app
+appstore 409203825 Numbers #/Applications/Numbers.app
+appstore 409201541 Pages #/Applications/Pages.app
+appstore 568494494 Pocket #/Applications/Pocket.app
+appstore 948415170 Pushbullet #/Applications/Pushbullet.app
+appstore 692867256 Simplenote #/Applications/Simplenote.app
+appstore 507257563 Sip #/Applications/Sip.app
+appstore 404010395 TextWrangler #/Applications/TextWrangler.app
+appstore 497799835 Xcode #/Applications/Xcode.app
