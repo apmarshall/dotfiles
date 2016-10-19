@@ -25,6 +25,7 @@ file ~/.dotfiles/git/packages
 file ~/.dotfiles/php/packages
 file ~/.dotfiles/python/packages
 file ~/.dotfiles/ruby/packages
+file ~/.dotfiles/tmux/packages
 
 file ~/.dotfiles/homebrew/appstore
 file ~/.dotfiles/homebrew/cask
