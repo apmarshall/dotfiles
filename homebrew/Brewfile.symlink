@@ -20,6 +20,7 @@ file ~/.dotfiles/osx/packages
 file ~/.dotfiles/system/packages
 
 file ~/.dotfiles/docker/packages
+file ~/.dotfiles/emacs/packages
 file ~/.dotfiles/git/packages
 file ~/.dotfiles/php/packages
 file ~/.dotfiles/python/packages
