@@ -49,11 +49,14 @@ setup_gitconfig () {
   fi
 }
 
+# Link our dotfiles to their proper places
+$DOTFILES_ROOT/bin/mkdot
+
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
-  $HOME/.dotfiles/script/install
+  $DOTFILES_ROOT/script/install
 fi
 
 echo ''
