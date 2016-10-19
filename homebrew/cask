@@ -2,20 +2,30 @@
 tap caskroom/cask
 brew cask
 
-cask atom
-cask brackets
-cask chrome
-cask cyberduck
-cask franz
-cask gimp
-cask google-web-designer
-cask inkscape
-cask notion
-cask opera
-cask pixlr
-cask polymail
-cask postman
-cask slack
-cask virtualbox
-cask wordpresscom
-cask xquartz
+# Apps installed by Cask in caskroom/cask
+cask install atom #/Applications/Atom.app
+cask install brackets #/Applications/Brackets.app
+cask install cyberduck #/Applications/Cyberduck.app
+cask install dropbox #/Applications/Dropbox.app
+cask install gimp #/Applications/GIMP.app
+cask install google-chrome #/Applications/Google Chrome.app
+cask install google-drive #/Applications/Google Drive.app
+cask install google-web-designer #/Applications/Google Web Designer.app
+cask install inkscape #/Applications/Inkscape.app
+cask install iterm2 #/Applications/iTerm.app
+cask install kitematic #/Applications/Kitematic (Beta).app
+cask install logmein-client #/Applications/LogMeIn Client.app
+cask install mysqlworkbench #/Applications/MySQLWorkbench.app
+cask install notion #/Applications/Notion.app
+cask install opera #/Applications/Opera.app
+cask install pixate-studio #/Applications/Pixate Studio.app
+cask install pixlr #/Applications/Pixlr.app
+cask install postman #/Applications/Postman.app
+cask install rescuetime #/Applications/RescueTime.app
+cask install screenhero #/Applications/Screenhero.app
+cask install slack #/Applications/Slack.app
+cask install timely #/Applications/Timely.app
+cask install vectr #/Applications/Vectr.app
+cask install virtualbox #/Applications/VirtualBox.app
+cask install wordpresscom #/Applications/WordPress.com.app
+cask install xquartz #/Applications/Utilities/XQuartz.app
