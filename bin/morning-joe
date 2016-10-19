@@ -2,4 +2,6 @@
 
 # Updates all our homebrew installations
 
-brew update && brew upgrade
+brew file update
+brew file cask_upgrade -C
+brew cleanup
