@@ -1,0 +1,179 @@
+
+# tap repositories and their packages
+
+tap bradp/vv
+brew vv
+
+tap caskroom/cask
+cask atom
+cask brackets
+cask cyberduck
+cask franz
+cask gimp
+cask google-web-designer
+cask inkscape
+cask notion
+cask opera
+cask pixlr
+cask polymail
+cask postman
+cask slack
+cask virtualbox
+cask wordpresscom
+cask xquartz
+
+tap codekitchen/dinghy
+brew dinghy
+
+tap homebrew/core
+brew ansible
+brew atk
+brew autoconf
+brew automake
+brew awscli
+brew boost
+brew boot2docker
+brew cairo
+brew camlp4
+brew cask
+brew cmake
+brew coreutils
+brew curl
+brew dnsmasq
+brew docker
+brew docker-compose
+brew docker-machine
+brew emacs
+brew fasd
+brew findutils
+brew fontconfig
+brew freetype
+brew gdbm
+brew gdk-pixbuf
+brew gettext
+brew git
+brew git-extras
+brew git-flow
+brew glib
+brew gmp
+brew go
+brew gobject-introspection
+brew googler
+brew gtk+
+brew harfbuzz
+brew hicolor-icon-theme
+brew htop
+brew hub
+brew icu4c
+brew imagemagick
+brew jpeg
+brew jq
+brew jrnl
+brew libcroco
+brew libevent
+brew libffi
+brew libpng
+brew librsvg
+brew libtiff
+brew libtool
+brew libyaml
+brew makedepend
+brew mysql
+brew node
+brew ocaml
+brew ocamlbuild
+brew oniguruma
+brew openssl
+brew optipng
+brew pango
+brew pcre
+brew perl
+brew pixman
+brew pkg-config
+brew pngquant
+brew postgresql
+brew python
+brew python3
+brew qt
+brew rbenv
+brew readline
+brew reattach-to-user-namespace
+brew redis
+brew ruby
+brew ruby-build
+brew shared-mime-info
+brew sphinx-doc
+brew sqlite
+brew swi-prolog
+brew the_silver_searcher
+brew tmux
+brew unfs3
+brew unixodbc
+brew utf8proc
+brew vim
+brew wget
+brew xz
+
+tap homebrew/dupes
+
+tap homebrew/emacs
+brew async-emacs
+brew dash-emacs
+brew epl
+brew flycheck
+brew helm
+brew let-alist
+brew magit
+brew markdown-mode
+brew org-mode
+brew php-mode
+brew pkg-info
+brew projectile
+brew s-emacs
+brew seq
+brew smex
+brew solarized-emacs --HEAD
+brew web-mode
+brew ztree-emacs
+
+tap homebrew/php
+brew brew-php-switcher
+brew composer
+brew php56
+brew php70
+brew php71
+brew phpunit
+
+tap homebrew/versions
+
+tap homebrew/x11
+
+tap rcmdnk/file
+brew brew-file
+
+tap thoughtbot/formulae
+
+# App Store applications
+appstore 405843582 Alfred
+appstore 557945049 BeanCounter
+appstore 902111700 Blogo
+appstore 433335799 CodeRunner
+appstore 458034879 Dash
+appstore 406056744 Evernote
+appstore 906164672 Form
+appstore 682658836 GarageBand
+appstore 490152466 iBooks Author
+appstore 408981434 iMovie
+appstore 408981381 iPhoto
+appstore 884952790 iTranslate
+appstore 409183694 Keynote
+appstore 405399194 Kindle
+appstore 402397683 MindNode Lite
+appstore 409203825 Numbers
+appstore 409201541 Pages
+appstore 568494494 Pocket
+appstore 948415170 Pushbullet
+appstore 692867256 Simplenote
+appstore 507257563 Sip
+appstore 404010395 TextWrangler
+appstore 497799835 Xcode
