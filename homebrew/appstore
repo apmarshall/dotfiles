@@ -1,4 +1,6 @@
 # App Store applications
+brew mas
+
 appstore 405843582 Alfred
 appstore 557945049 BeanCounter
 appstore 902111700 Blogo
