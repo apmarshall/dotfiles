@@ -49,6 +49,9 @@ setup_gitconfig () {
   fi
 }
 
+# Set our system defaults
+$DOTFILES_ROOT/bin/set-defaults
+
 # Link our dotfiles to their proper places
 $DOTFILES_ROOT/bin/mkdot
 
