@@ -1,4 +1,6 @@
-# PHP Related Taps and Packages
+
+# tap repositories and their packages
+
 tap homebrew/php
 brew brew-php-switcher
 brew composer

@@ -1,37 +1,12 @@
-# Essential Taps
-tap homebrew/core
-tap homebrew/dupes
-tap homebrew/versions
-tap homebrew/x11
 
-# Build Packages
+# tap repositories and their packages
+
+tap homebrew/core
 brew autoconf
 brew automake
 brew cmake
 brew pkg-config
 brew makedepend
-
-# Brewfile
-tap rcmdnk/file
-brew brew-file
-
-# Files
-file ~/.dotfiles/osx/packages
-file ~/.dotfiles/system/packages
-
-file ~/.dotfiles/docker/packages
-file ~/.dotfiles/emacs/packages
-file ~/.dotfiles/git/packages
-file ~/.dotfiles/php/packages
-file ~/.dotfiles/python/packages
-file ~/.dotfiles/ruby/packages
-file ~/.dotfiles/tmux/packages
-
-file ~/.dotfiles/homebrew/appstore
-file ~/.dotfiles/homebrew/cask
-
-# Dependencies Added Automatically by Brew Install (this prevents them from being deleted on cleanup)
-
 brew atk
 brew boost
 brew cairo
@@ -72,3 +47,25 @@ brew unfs3
 brew unixodbc
 brew utf8proc
 brew xz
+
+tap homebrew/dupes
+
+tap homebrew/versions
+
+tap homebrew/x11
+
+tap rcmdnk/file
+brew brew-file
+
+# Additional files
+file ~/.dotfiles/osx/packages
+file ~/.dotfiles/system/packages
+file ~/.dotfiles/docker/packages
+file ~/.dotfiles/emacs/packages
+file ~/.dotfiles/git/packages
+file ~/.dotfiles/php/packages
+file ~/.dotfiles/python/packages
+file ~/.dotfiles/ruby/packages
+file ~/.dotfiles/tmux/packages
+file ~/.dotfiles/homebrew/appstore
+file ~/.dotfiles/homebrew/cask

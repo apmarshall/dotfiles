@@ -1,4 +1,7 @@
-# Git and GitHub related packages
+
+# tap repositories and their packages
+
+# Other Homebrew packages
 brew git
 brew git-extras
 brew git-flow

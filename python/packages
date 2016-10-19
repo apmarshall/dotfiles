@@ -1,4 +1,6 @@
-# Python related packages and taps
 
+# tap repositories and their packages
+
+# Other Homebrew packages
 brew python
 brew python3

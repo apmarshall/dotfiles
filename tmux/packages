@@ -1,3 +1,6 @@
-# Tmux related packages
+
+# tap repositories and their packages
+
+# Other Homebrew packages
 brew tmux
 brew reattach-to-user-namespace

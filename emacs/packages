@@ -1,13 +1,12 @@
-# Emacs related packages
-tap homebrew/emacs
-brew emacs --with-cocoa
 
+# tap repositories and their packages
+
+tap homebrew/emacs
 brew async-emacs
 brew dash-emacs
 brew epl
 brew flycheck
 brew helm
-brew jrnl
 brew let-alist
 brew magit
 brew markdown-mode
@@ -21,3 +20,7 @@ brew smex
 brew solarized-emacs --HEAD
 brew web-mode
 brew ztree-emacs
+
+# Other Homebrew packages
+brew emacs --with-cocoa
+brew jrnl

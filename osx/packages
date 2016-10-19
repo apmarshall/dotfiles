@@ -1,5 +1,7 @@
-# Replacing OSX Packages with Newer Versions
 
+# tap repositories and their packages
+
+# Other Homebrew packages
 brew binutils
 brew coreutils
 brew curl

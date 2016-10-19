@@ -1,4 +1,7 @@
-# Ruby related packages and taps
+
+# tap repositories and their packages
+
+# Other Homebrew packages
 brew ruby
 brew ruby-build
 brew rbenv

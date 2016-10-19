@@ -1,5 +1,7 @@
-# Additional Packages for System Management and Web Development
 
+# tap repositories and their packages
+
+# Other Homebrew packages
 brew ansible
 brew awscli
 brew dnsmasq

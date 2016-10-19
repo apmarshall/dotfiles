@@ -1,7 +1,10 @@
-# App Store applications
+
+# tap repositories and their packages
+
+# Other Homebrew packages
 brew mas
 
-# Apps installed from AppStore
+# App Store applications
 appstore 405843582 Alfred #/Applications/Alfred.app
 appstore 557945049 BeanCounter #/Applications/BeanCounter.app
 appstore 902111700 Blogo #/Applications/Blogo.app
