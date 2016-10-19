@@ -1,8 +1,0 @@
-php56
-brew-php-switcher
-phpunit
-wp-cli
-composer
-mysql
-perconadb
-mariadb

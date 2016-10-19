@@ -1,4 +1,0 @@
-docker
-docker-machine
-docker-compose
-https://github.com/codekitchen/dinghy/raw/latest/dinghy.rb

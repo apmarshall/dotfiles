@@ -1,0 +1,24 @@
+# Replacing OSX Packages with Newer Versions
+
+brew binutils
+brew coreutils
+brew curl
+brew diffutils
+brew findutils --default-names
+brew gettext
+brew gnu-sed --default-names
+brew gnu-tar --default-names
+brew gnu-which --default-names
+brew gnutls --default-names
+brew gpg
+brew grep --default-names
+brew gzip
+brew htop
+brew nmap
+brew openssl
+brew perl
+brew sqlite
+brew vim
+brew watch
+brew wget
+brew zsh

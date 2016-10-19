@@ -1,0 +1,9 @@
+# Docker Binaries
+brew boot2docker
+brew docker
+brew docker-compose
+brew docker-machine
+
+# Dinghy VM
+tap codekitchen/dinghy
+brew dinghy

@@ -1,0 +1,16 @@
+# Additional Packages for System Management and Web Development
+
+brew ansible
+brew awscli
+brew dnsmasq
+brew fasd
+brew go
+brew googler
+brew imagemagick
+brew mariadb
+brew node
+brew optipng
+brew pngquant
+brew postgresql
+brew redis
+brew the_silver_searcher

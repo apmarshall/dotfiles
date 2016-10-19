@@ -1,0 +1,21 @@
+# Applications Managed with Cask
+tap caskroom/cask
+brew cask
+
+cask atom
+cask brackets
+cask chrome
+cask cyberduck
+cask franz
+cask gimp
+cask google-web-designer
+cask inkscape
+cask notion
+cask opera
+cask pixlr
+cask polymail
+cask postman
+cask slack
+cask virtualbox
+cask wordpresscom
+cask xquartz

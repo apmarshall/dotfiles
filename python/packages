@@ -1,0 +1,4 @@
+# Python related packages and taps
+
+brew python
+brew python3

@@ -1,0 +1,8 @@
+# PHP Related Taps and Packages
+tap homebrew/php
+brew brew-php-switcher
+brew composer
+brew php56
+brew php70
+brew php71
+brew phpunit

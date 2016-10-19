@@ -1,0 +1,5 @@
+# Git and GitHub related packages
+brew git
+brew git-extras
+brew git-flow
+brew hub

@@ -1,3 +1,0 @@
-homebrew/dupes
-homebrew/versions
-homebrew/php
