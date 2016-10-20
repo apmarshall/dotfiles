@@ -49,6 +49,9 @@ setup_gitconfig () {
   fi
 }
 
+# Create a starting .localrc file so we can successfully bootstrap. Don't put anything sensitive in this sample, just the bare minimum
+cp $DOTFILES_ROOT/localrc.sample ~/.localrc
+
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]
 then
