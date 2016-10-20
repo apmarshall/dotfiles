@@ -49,18 +49,20 @@ setup_gitconfig () {
   fi
 }
 
-# Set our system defaults
-$DOTFILES_ROOT/bin/set-defaults
-
-# Link our dotfiles to their proper places
-$DOTFILES_ROOT/bin/mkdot
-
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
   $DOTFILES_ROOT/script/install
 fi
+
+# Link out dotfiles to ensure proper config of all the dependencies we just installed
+echo 'Linking dotfiles to configure dependencies'
+$DOTFILES_ROOT/bin/mkdot
+
+# Set system defaults
+echo 'Setting system defaults'
+$DOTFILES_ROOT/bin/set-defaults
 
 echo ''
 echo '  Bootstrap complete!'
