@@ -1,7 +1,12 @@
 #! /bin/sh
 
-# Updates all our homebrew installations
-
-brew file update
+# Updates all our applications
+mas upgrade
+brew update && brew upgrade
 brew file cask_upgrade -C
+
+# Install anything that we haven't installed yet
+brew file install --no-appstore
+
+# Clean Everything Up
 brew cleanup
