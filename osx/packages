@@ -23,4 +23,5 @@ brew sqlite
 brew vim
 brew watch
 brew wget
+brew yarn
 brew zsh
