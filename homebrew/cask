@@ -26,6 +26,7 @@ cask security-growler
 cask sequel-pro
 cask slack
 cask timely
+cask vagrant
 cask vectr
 cask virtualbox
 cask wordpresscom
