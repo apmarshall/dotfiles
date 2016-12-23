@@ -9,6 +9,12 @@ echo "Upgrading Installed Packages"
 brew upgrade
 echo "Checking for Updates to Applications Managed by Cask"
 brew file cask_upgrade -C
+echo "Checking for Updates to Vagrant plugins"
+vagrant plugin update
+echo "Checking for Updates to Global NPM Packages"
+yarn global upgrade
+echo "Checking for Updates to Atom Packages"
+apm upgrade --compatible
 
 # Install anything that we haven't installed yet
 echo "Checking for New Packages to Install"
