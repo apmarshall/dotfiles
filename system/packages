@@ -4,7 +4,7 @@
 # Other Homebrew packages
 brew ansible
 brew awscli
-brew dnsmasq
+brew dnsmasq --with-dnssec
 brew fasd
 brew go
 brew googler
