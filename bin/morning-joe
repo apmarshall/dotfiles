@@ -1,4 +1,6 @@
-#! /bin/sh
+#! /usr/bin/env bash
+# Update all our applications/packages and install new ones we've added to our lists
+export ZSH=$HOME/.dotfiles
 
 # Updates all our applications
 echo "Checking for App-Store Application Updates"
@@ -18,7 +20,12 @@ apm upgrade --compatible
 
 # Install anything that we haven't installed yet
 echo "Checking for New Packages to Install"
+echo "Checking for new packages managed by Homebrew"
 brew file install --no-appstore
+#echo "Checking for new global packages managed by Yarn"
+#$ZSH/node/yarn_packages
+#echo "Checking for new Atom packages"
+#apm install --packages-file $ZSH/node/apm_packages
 
 # Clean Everything Up
 echo "Cleaning Up Homebrew Cache"
