@@ -38,13 +38,13 @@ brew oniguruma
 brew pango
 brew pcre
 brew pixman
-brew qt
+brew qt5
 brew readline
 brew shared-mime-info
 brew sphinx-doc
 brew swi-prolog
-brew unfs3
 brew unixodbc
+brew unfs3
 brew utf8proc
 brew xz
 
@@ -56,6 +56,8 @@ tap homebrew/x11
 
 tap rcmdnk/file
 brew brew-file
+
+# Other Homebrew packages
 
 # Additional files
 file ~/.dotfiles/osx/packages

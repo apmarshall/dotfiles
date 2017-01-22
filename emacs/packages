@@ -19,8 +19,8 @@ brew seq
 brew smex
 brew solarized-emacs --HEAD
 brew web-mode
-brew ztree-emacs
 
 # Other Homebrew packages
 brew emacs --with-cocoa
 brew jrnl
+brew ztree
