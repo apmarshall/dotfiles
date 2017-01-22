@@ -15,10 +15,10 @@ cask kitematic
 cask logmein-client
 cask mysqlworkbench
 cask notion
+cask nylas-mail
 cask opera
 cask pixate-studio
 cask pixlr
-cask polymail
 cask postman
 cask rescuetime
 cask screenhero
