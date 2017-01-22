@@ -2,7 +2,6 @@
 # tap repositories and their packages
 
 tap caskroom/cask
-tap caskroom/versions
 cask atom
 cask brackets
 cask cyberduck
@@ -18,7 +17,6 @@ cask mysqlworkbench
 cask notion
 cask nylas-mail
 cask opera
-cask opera-neon
 cask pixate-studio
 cask pixlr
 cask postman
@@ -33,6 +31,9 @@ cask vectr
 cask virtualbox
 cask wordpresscom
 cask xquartz
+
+tap caskroom/versions
+cask opera-neon
 
 # Other Homebrew packages
 brew cask
