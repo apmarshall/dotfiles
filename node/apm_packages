@@ -4,7 +4,6 @@ atom-material-syntax
 atom-material-ui
 atomic-emacs
 autocomplete-paths
-autocomplete-wordpress-hooks
 autoprefixer
 color-picker
 git-plus
@@ -20,6 +19,8 @@ local-history
 minimap
 pigments
 terminal-plus
+wakatime
 wordpress-api
+wordpress-dictionary
 
 
