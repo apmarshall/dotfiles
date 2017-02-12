@@ -9,6 +9,7 @@ brew fasd
 brew go
 brew googler
 brew imagemagick
+brew links
 brew mariadb
 brew node
 brew optipng
