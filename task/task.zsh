@@ -1,1 +1,1 @@
-TASKRC=~/.taskrc
+TASKRC=~/.taskwarriorrc
