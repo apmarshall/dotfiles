@@ -1,3 +1,6 @@
 brew task
 brew taskd
 brew tasksh
+brew timewarrior
+
+cask taskwarrior-pomodoro
