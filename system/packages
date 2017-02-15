@@ -16,8 +16,4 @@ brew optipng
 brew pngquant
 brew postgresql
 brew redis
-brew task
-brew taskd
-brew tasksh
 brew the_silver_searcher
-brew timewarrior
