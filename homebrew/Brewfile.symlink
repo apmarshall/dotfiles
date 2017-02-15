@@ -72,3 +72,4 @@ file ~/.dotfiles/tmux/packages
 file ~/.dotfiles/homebrew/appstore
 file ~/.dotfiles/homebrew/cask
 file ~/.dotfiles/osx/security
+file ~/.dotfiles/task/packages
