@@ -16,6 +16,7 @@ cask logmein-client
 cask mysqlworkbench
 cask notion
 cask nylas-mail
+cask opera-neon
 cask opera
 cask pixate-studio
 cask pixlr
@@ -25,14 +26,12 @@ cask screenhero
 cask sequel-pro
 cask slack
 cask timely
-cask vagrant
 cask vectr
 cask virtualbox
 cask wordpresscom
 cask xquartz
 
 tap caskroom/versions
-cask opera-neon
 
 # Other Homebrew packages
 brew cask
