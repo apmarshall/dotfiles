@@ -21,7 +21,7 @@ apm upgrade --compatible
 # Install anything that we haven't installed yet
 echo "Checking for New Packages to Install"
 echo "Checking for new packages managed by Homebrew"
-brew file install --no-appstore
+brew file install --no_appstore
 #echo "Checking for new global packages managed by Yarn"
 #$ZSH/node/yarn_packages
 #echo "Checking for new Atom packages"
