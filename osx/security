@@ -1,4 +1,7 @@
-# Packages for maintaining OSX security
+
+# tap repositories and their packages
+
+# Cask applications
 cask blockblock
 cask kextviewr
 cask knockknock
