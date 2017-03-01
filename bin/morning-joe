@@ -32,5 +32,5 @@ echo "Cleaning Up Homebrew Cache"
 brew cleanup
 
 # List casks in need of upgrade
-echo Listing casks that should be upgraded (please upgrade manually using \n brew cask install --force)
+echo Listing casks that should be upgraded. Please upgrade manually using brew cask install --force
 brew file cask_upgrade
