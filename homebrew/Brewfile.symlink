@@ -57,11 +57,12 @@ tap homebrew/x11
 tap rcmdnk/file
 brew brew-file
 
+
 # Additional files
 file ~/.dotfiles/osx/packages
 file ~/.dotfiles/system/packages
 file ~/.dotfiles/docker/packages
-file ~/.dotfiles/emacs/packages
+file ~/.dotfiles/emacs/packages.brew
 file ~/.dotfiles/git/packages
 file ~/.dotfiles/php/packages
 file ~/.dotfiles/python/packages
