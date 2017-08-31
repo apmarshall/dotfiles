@@ -2,7 +2,6 @@
 # tap repositories and their packages
 
 tap caskroom/cask
-cask atom
 cask brackets
 cask cyberduck
 cask gimp
@@ -11,21 +10,15 @@ cask google-drive
 cask google-web-designer
 cask inkscape
 cask iterm2
-cask kitematic
 cask logmein-client
 cask mysqlworkbench
 cask notion
-cask nylas-mail
 cask opera-neon
 cask opera
-cask pixate-studio
-cask pixlr
 cask postman
-cask rescuetime
 cask screenhero
 cask sequel-pro
 cask slack
-cask timely
 cask vectr
 cask virtualbox
 cask wordpresscom
