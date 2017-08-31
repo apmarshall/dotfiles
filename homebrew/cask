@@ -2,27 +2,42 @@
 # tap repositories and their packages
 
 tap caskroom/cask
+cask alfred
 cask brackets
 cask cyberduck
+cask flux
 cask gimp
 cask google-chrome
 cask google-drive
 cask google-web-designer
+cask hammerspoon
+cask imageoptim
 cask inkscape
+cask integrity
 cask iterm2
+cask kap
 cask logmein-client
 cask mysqlworkbench
 cask notion
 cask opera-neon
 cask opera
+cask origami-studio
+cask podcastmenu
 cask postman
+cask qbserve
 cask screenhero
+cask selfcontrol
 cask sequel-pro
+cask ship
+cask shotcut
 cask slack
 cask vectr
 cask virtualbox
 cask wordpresscom
 cask xquartz
+
+# Vagratn (locked on specific version)
+cask https://raw.githubusercontent.com/caskroom/homebrew-cask/60531a2812005dd5f17dc92f3ce7419af3c5d019/Casks/vagrant.rb
 
 tap caskroom/versions
 
