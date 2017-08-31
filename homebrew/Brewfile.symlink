@@ -43,6 +43,7 @@ brew readline
 brew shared-mime-info
 brew sphinx-doc
 brew swi-prolog
+brew unfs3
 brew unixodbc
 brew utf8proc
 brew xz
@@ -55,12 +56,6 @@ tap homebrew/x11
 
 tap rcmdnk/file
 brew brew-file
-
-# Other Homebrew packages
-brew unfs3
-
-# Cask applications
-cask https://raw.githubusercontent.com/caskroom/homebrew-cask/60531a2812005dd5f17dc92f3ce7419af3c5d019/Casks/vagrant.rb
 
 # Additional files
 file ~/.dotfiles/osx/packages
