@@ -15,8 +15,6 @@ echo "Checking for Updates to Vagrant plugins"
 vagrant plugin update
 echo "Checking for Updates to Global NPM Packages"
 yarn global upgrade
-echo "Checking for Updates to Atom Packages"
-apm upgrade --compatible
 
 # Install anything that we haven't installed yet
 #echo "Checking for New Packages to Install"
@@ -24,8 +22,6 @@ apm upgrade --compatible
 #brew file install --no_appstore
 #echo "Checking for new global packages managed by Yarn"
 #$ZSH/node/yarn_packages
-#echo "Checking for new Atom packages"
-#apm install --packages-file $ZSH/node/apm_packages
 
 # Clean Everything Up
 echo "Cleaning Up Homebrew Cache"
