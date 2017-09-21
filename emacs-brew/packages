@@ -1,0 +1,9 @@
+
+# tap repositories and their packages
+
+tap homebrew/emacs
+
+# Other Homebrew packages
+brew emacs --with-cocoa
+brew jrnl
+brew pandoc

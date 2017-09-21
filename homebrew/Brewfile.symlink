@@ -63,7 +63,7 @@ brew unfs3
 file ~/.dotfiles/osx/packages
 file ~/.dotfiles/system/packages
 file ~/.dotfiles/docker/packages
-file ~/.dotfiles/emacs/packages.brew
+file ~/.dotfiles/emacs-brew/packages
 file ~/.dotfiles/git/packages
 file ~/.dotfiles/php/packages
 file ~/.dotfiles/python/packages
