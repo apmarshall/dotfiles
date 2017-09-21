@@ -3,10 +3,12 @@
 
 tap caskroom/cask
 cask alfred
+cask amazon-music
 cask brackets
 cask cyberduck
 cask flux
 cask gimp
+cask gitify
 cask google-chrome
 cask google-drive
 cask google-web-designer
@@ -36,10 +38,10 @@ cask virtualbox
 cask wordpresscom
 cask xquartz
 
-# Vagratn (locked on specific version)
-cask https://raw.githubusercontent.com/caskroom/homebrew-cask/60531a2812005dd5f17dc92f3ce7419af3c5d019/Casks/vagrant.rb
-
 tap caskroom/versions
 
 # Other Homebrew packages
 brew cask
+
+# Lock Vagrant Version (for compatability reasons)
+cask https://raw.githubusercontent.com/caskroom/homebrew-cask/60531a2812005dd5f17dc92f3ce7419af3c5d019/Casks/vagrant.rb
