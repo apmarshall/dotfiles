@@ -2,15 +2,13 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew atk
 brew autoconf
 brew automake
-brew cmake
-brew pkg-config
-brew makedepend
-brew atk
 brew boost
 brew cairo
 brew camlp4
+brew cmake
 brew fontconfig
 brew freetype
 brew gdbm
@@ -32,12 +30,14 @@ brew librsvg
 brew libtiff
 brew libtool
 brew libyaml
+brew makedepend
 brew ocaml
 brew ocamlbuild
 brew oniguruma
 brew pango
 brew pcre
 brew pixman
+brew pkg-config
 brew readline
 brew shared-mime-info
 brew sphinx-doc

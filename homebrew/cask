@@ -43,5 +43,5 @@ tap caskroom/versions
 # Other Homebrew packages
 brew cask
 
-# Lock Vagrant Version (For compatability reasons)
+# Lock Vagrant Version (for compatability reasons)
 cask https://raw.githubusercontent.com/caskroom/homebrew-cask/60531a2812005dd5f17dc92f3ce7419af3c5d019/Casks/vagrant.rb

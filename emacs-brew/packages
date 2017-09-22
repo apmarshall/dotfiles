@@ -1,9 +1,8 @@
+brew emacs
 
 # tap repositories and their packages
-
 tap homebrew/emacs
 
 # Other Homebrew packages
-brew emacs
 brew jrnl
 brew pandoc
