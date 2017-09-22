@@ -4,6 +4,6 @@
 tap homebrew/emacs
 
 # Other Homebrew packages
-brew emacs --with-cocoa
+brew emacs
 brew jrnl
 brew pandoc
