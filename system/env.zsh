@@ -1,2 +1,2 @@
-export EDITOR='emacsclient -t'
+export EDITOR='emacs'
 export BROWSER='links'
