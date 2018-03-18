@@ -10,7 +10,7 @@ brew update
 echo "Upgrading Installed Packages"
 brew upgrade
 #echo "Checking for Updates to Applications Managed by Cask"
-#brew file cask_upgrade -C
+brew-file update --caskonly
 echo "Checking for Updates to Vagrant plugins"
 vagrant plugin update
 echo "Checking for Updates to Global NPM Packages"
@@ -26,7 +26,3 @@ yarn global upgrade
 # Clean Everything Up
 echo "Cleaning Up Homebrew Cache"
 brew cleanup
-
-# List casks in need of upgrade
-echo Listing casks that should be upgraded. Please upgrade manually using brew cask install --force
-brew file cask_upgrade
