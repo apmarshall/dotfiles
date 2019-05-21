@@ -16,8 +16,12 @@ vagrant plugin update
 echo "Checking for Updates to Global NPM Packages"
 yarn global upgrade
 echo "Updating External Git Repositories"
+gr @external git checkout master
 gr @external git fetch upstream master
 gr @external git merge upstream/master
+gr @external git push
+gr @external git checkout develop
+gr @external git merge master
 
 # Install anything that we haven't installed yet
 #echo "Checking for New Packages to Install"
