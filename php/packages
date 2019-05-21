@@ -2,6 +2,8 @@
 # tap repositories and their packages
 
 tap homebrew/php
+
+# Other Homebrew packages
 brew composer
 brew php71
 brew phpunit

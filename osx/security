@@ -1,7 +1,7 @@
 
 # tap repositories and their packages
 
-# Cask applications
+# Other Cask applications
 cask blockblock
 cask kextviewr
 cask knockknock

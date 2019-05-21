@@ -2,6 +2,6 @@
 # tap repositories and their packages
 
 # Other Homebrew packages
+brew rbenv
 brew ruby
 brew ruby-build
-brew rbenv

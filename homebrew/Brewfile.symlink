@@ -5,15 +5,19 @@ tap homebrew/core
 brew atk
 brew autoconf
 brew automake
+brew bitwarden-cli
 brew boost
 brew cairo
 brew camlp4
 brew cmake
+brew ctags
 brew fontconfig
 brew freetype
 brew gdbm
 brew gdk-pixbuf
+brew glances
 brew glib
+brew global
 brew gmp
 brew gobject-introspection
 brew gtk+
@@ -22,6 +26,7 @@ brew hicolor-icon-theme
 brew icu4c
 brew jpeg
 brew jq
+brew lastpass-cli --with-pinentry
 brew libcroco
 brew libevent
 brew libffi
@@ -31,6 +36,7 @@ brew libtiff
 brew libtool
 brew libyaml
 brew makedepend
+brew mtr
 brew ocaml
 brew ocamlbuild
 brew oniguruma
@@ -40,6 +46,7 @@ brew pixman
 brew pkg-config
 brew readline
 brew shared-mime-info
+brew shellcheck
 brew sphinx-doc
 brew swi-prolog
 brew unixodbc
@@ -59,17 +66,32 @@ brew brew-file
 brew qt5
 brew unfs3
 
+# Other Cask applications
+cask amazon-music
+cask blender
+cask brave
+cask cacher
+cask cliqz
+cask gingko
+cask github
+cask google-drive-file-stream
+cask nordvpn
+cask pencil
+cask racket
+cask station
+cask visual-studio-code
+
 # Additional files
-file ~/.dotfiles/osx/packages
-file ~/.dotfiles/system/packages
 file ~/.dotfiles/docker/packages
 file ~/.dotfiles/emacs-brew/packages
 file ~/.dotfiles/git/packages
+file ~/.dotfiles/homebrew/appstore
+file ~/.dotfiles/homebrew/cask
+file ~/.dotfiles/osx/packages
+file ~/.dotfiles/osx/security
 file ~/.dotfiles/php/packages
 file ~/.dotfiles/python/packages
 file ~/.dotfiles/ruby/packages
-file ~/.dotfiles/tmux/packages
-file ~/.dotfiles/homebrew/appstore
-file ~/.dotfiles/homebrew/cask
-file ~/.dotfiles/osx/security
+file ~/.dotfiles/system/packages
 file ~/.dotfiles/task/packages
+file ~/.dotfiles/tmux/packages
