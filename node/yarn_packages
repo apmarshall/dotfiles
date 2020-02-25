@@ -1,7 +1,0 @@
-#! /bin/bash
-#
-
-yarn global add gulp \
-     	    	jshint \
-		bower \
-		node-gyp
