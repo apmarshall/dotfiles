@@ -2,7 +2,7 @@
 #
 
 [hub]
-        protocol = https
+        protocol = ssh
 [user]
         name = AUTHORNAME
         email = AUTHOREMAIL
@@ -10,29 +10,78 @@
         helper = GIT_CREDENTIAL_HELPER
 [alias]
         co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
+        promote = !$DOT/bin/git-promote
+        wtf     = !$DOT/bin/git-wtf
+        rank-contributors = !$DOT/bin/git-rank-contributors
         count   = !git shortlog -sn
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+
+	    # Use colors in Git commands that are capable of colored output when
+	    # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+	    ui = auto
+
+[color "branch"]
+
+	    current = yellow reverse
+	    local = yellow
+	    remote = green
+
+[color "diff"]
+
+	    meta = yellow bold
+	    frag = magenta bold # line info
+	    old = red # deletions
+	    new = green # additions
+
+[color "status"]
+
+	    added = yellow
+	    changed = green
+	    untracked = cyan
+
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        attributesfile = ~/.gitattributes
+        editor = emacs
+        
+        	# Make `git rebase` safer on macOS
+	    # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	    trustctime = false
+	    
+	    	# Speed up commands involving untracked files such as `git status`.
+	    # https://git-scm.com/docs/git-update-index#_untracked_cache
+	    untrackedCache = true
+	    
+[commit]
+
+	    # https://help.github.com/articles/signing-commits-using-gpg/
+	    gpgsign = true
+
 [apply]
         whitespace = nowarn
+
+[merge]
+		# Include summaries of merged commits in newly created merge commit messages
+		log = true
+
 [mergetool]
         keepBackup = false
+
+[diff]
+		# Detect copies as well as renames
+		renames = copies
+
 [difftool]
         prompt = false
+
 [help]
         autocorrect = 1
+
 [push]
         # See `git help config` (search for push.default)
         # for more information on different options of the below setting.
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+        # Make 'git push' push relevant annotated tags when pushing branches out
+        followTags = true
