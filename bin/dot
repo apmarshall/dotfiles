@@ -4,13 +4,4 @@
 #
 # `dot` handles installation, updates, things like that. Run it periodically
 # to make sure you're on the latest and greatest.
-export ZSH=$HOME/.dotfiles
-
-# make sure we have all updates
-cd $ZSH && git pull origin master
-
-# Set OS X defaults
-$ZSH/osx/set-defaults.sh
-
-# Symlink dotfiles to keep everything up-to-date
-$ZSH/bin/mkdot
+chezmoi update
