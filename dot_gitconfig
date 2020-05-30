@@ -4,8 +4,8 @@
 [hub]
         protocol = ssh
 [user]
-        name = AUTHORNAME
-        email = AUTHOREMAIL
+        name = apmarshall
+        email = alex@soren.tech
 [credential]
         helper = GIT_CREDENTIAL_HELPER
 [alias]
