@@ -6,7 +6,7 @@
 [user]
         name = "{{ .gitusername }}"
         email = "{{ .gitemail }}"
-        # signingkey = {{ .gitsignkey }}
+        signingkey = "{{ .gitsignkey }}"
 [credential]
         helper = GIT_CREDENTIAL_HELPER
 [alias]
@@ -58,7 +58,7 @@
 	    	#use template
 		    template = ~/.gitmessage
 	      # https://help.github.com/articles/signing-commits-using-gpg/
-	      # gpgsign = true
+	      gpgsign = true
 
 [apply]
         whitespace = nowarn
