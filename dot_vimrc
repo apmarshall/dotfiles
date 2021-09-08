@@ -8,3 +8,9 @@ filetype indent plugin on
 
 " Pathogen support
 execute pathogen#infect()
+
+" VimWiki Wikis
+let sync_wiki_1 = {}
+let sync_wiki_1.path = '~/Sync/wiki_1/'
+
+let g:vimwiki_list = [sync_wiki_1]
