@@ -7,8 +7,10 @@ bind C-a send-prefix
 unbind r
 bind r source-file ~/.tmux.conf
 
+{{- if eq .chezmoi.os "darwin" -}}
 # Make sure we always use reattach-to-user-namespace
 set-option -g default-command "reattach-to-user-namespace -l zsh"
+{{ end - }}
 
 # Set colors
 set-option -g default-terminal "screen-256color"
