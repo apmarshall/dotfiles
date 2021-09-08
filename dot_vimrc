@@ -1,3 +1,6 @@
+" VimWiki compatability
+set nocompatible
+filetype plugin on
 syntax on
 
 " Wrap gitcommit file types at the appropriate length
