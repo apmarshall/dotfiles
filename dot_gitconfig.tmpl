@@ -3,41 +3,37 @@
 
 [hub]
         protocol = ssh
+
 [user]
         name = "{{ .gitusername }}"
         email = "{{ .gitemail }}"
-        signingkey = "{{ .gitsignkey }}"
-[credential]
-        # helper = GIT_CREDENTIAL_HELPER
+
 [alias]
         co = checkout
         promote = !$DOT/bin/git-promote
         wtf     = !$DOT/bin/git-wtf
         rank-contributors = !$DOT/bin/git-rank-contributors
         count   = !git shortlog -sn
-[color]
 
-	      # Use colors in Git commands that are capable of colored output when
-	      # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	      ui = auto
+[color]
+	    # Use colors in Git commands that are capable of colored output when
+	    # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+	    ui = auto
 
 [color "branch"]
-
-	      current = yellow reverse
-	      local = yellow
-	      remote = green
+	    current = yellow reverse
+	    local = yellow
+	    remote = green
 
 [color "diff"]
-
-	      meta = yellow bold
-	      frag = magenta bold # line info
-	      old = red # deletions
-	      new = green # additions
+		meta = yellow bold
+	    frag = magenta bold # line info
+	    old = red # deletions
+	    new = green # additions
 
 [color "status"]
-
-	      added = yellow
-	      changed = green
+	    added = yellow
+	    changed = green
    	    untracked = cyan
 
 [core]
@@ -46,20 +42,28 @@
         editor = emacs
         
         # Make `git rebase` safer on macOS
-	      # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	      trustctime = false
+	    # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	    trustctime = false
 	    
 	    	# Speed up commands involving untracked files such as `git status`.
-	      # https://git-scm.com/docs/git-update-index#_untracked_cache
-	      untrackedCache = true
+	    # https://git-scm.com/docs/git-update-index#_untracked_cache
+	    untrackedCache = true
 	    
 [commit]
-
 	    	#use template
-		    template = ~/.gitmessage
-	      # https://help.github.com/articles/signing-commits-using-gpg/
-	      gpgsign = true
+		template = ~/.gitmessage
+	    # https://help.github.com/articles/signing-commits-using-gpg/
+	    gpgsign = true
 
+[tag]
+		gpgsign = true
+
+[gpg]
+		format = x509
+		
+[gpg "x509"]
+		program = gitsign	
+	
 [apply]
         whitespace = nowarn
 
