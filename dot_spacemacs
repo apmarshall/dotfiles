@@ -31,11 +31,15 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     rust
-     javascript
-     php
-     markdown
+     docker
+     go
      python
+     terraform
+     tmux
+     (treemacs :variables
+                treemacs-use-follow-mode t
+                treemacs-use-filewatch-mode t
+                treemacs-use-git-mode 'simple)
      yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -43,13 +47,13 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
      fasd
      git
      gtags
-     ;; markdown
+     markdown
      org
      osx
      (shell :variables
