@@ -1,35 +1,26 @@
 #! /usr/bin/env bash
-# Update all our applications/packages and install new ones we've added to our lists
-export ZSH=$HOME/.dotfiles
+# Update applications/packages and install new ones we've added to the Brewfile
 
-# Updates all our applications
-echo "Checking for App-Store Application Updates"
-mas upgrade
+set -e
+
+# Update Homebrew
 echo "Updating Homebrew"
 brew update
-echo "Upgrading Installed Packages"
-brew upgrade
-#echo "Checking for Updates to Applications Managed by Cask"
-brew-file update --caskonly
-echo "Checking for Updates to Vagrant plugins"
-vagrant plugin update
-echo "Checking for Updates to Global NPM Packages"
-yarn global upgrade
-echo "Updating External Git Repositories"
-gr @external git checkout master
-gr @external git fetch upstream master
-gr @external git merge upstream/master
-gr @external git push
-gr @external git checkout develop
-gr @external git merge master
 
-# Install anything that we haven't installed yet
-#echo "Checking for New Packages to Install"
-#echo "Checking for new packages managed by Homebrew"
-#brew file install --no_appstore
-#echo "Checking for new global packages managed by Yarn"
-#$ZSH/node/yarn_packages
+# Identify outdated Homebrew packages
+echo "Listing outdated brews"
+brew outdated
 
-# Clean Everything Up
-echo "Cleaning Up Homebrew Cache"
-brew cleanup
+# Use Brewfile to install new packages and perform upgrades
+echo "Checking for new Brewfile packages and performing updates"
+brew bundle --file ~/.Brewfile
+
+# Upgrade spacemacs to latest version
+echo "Upgrading spacemacs"
+cd ~/.emacs.d && git pull
+cd $HOME
+
+# End
+echo "Upgrades complete. Have a nice days!"
+
+# The End
