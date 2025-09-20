@@ -9,7 +9,7 @@
         email = "{{- .email }}"
         {{ if eq .equipment "gfe" -}}
         sigingkey = ~/.ssh/gitlab.pub
-        {{ end -}}
+        {{- end }}
 
 [alias]
         co = checkout
@@ -71,7 +71,7 @@
 		
 [gpg "x509"]
 		program = gitsign
-{{ end -}}
+{{- end }}
 			
 [apply]
         whitespace = nowarn
