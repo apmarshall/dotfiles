@@ -1,0 +1,29 @@
+# Core
+brew "emacs"
+brew "git"
+brew "gnupg"
+brew "go"
+brew "node"
+brew "openssl"
+brew "openssh"
+brew "pinentry"
+brew "python"
+
+# Tmux
+brew "tmux"
+brew "tmuxinator"
+brew "reattach-to-user-namespace"
+
+# Hashicorp
+tap "hashicorp/tap"
+brew "haschicorp/tap/terraform"
+brew "hashicorp/tap/vault"
+
+{{- if ne .equipment "gfe" -}}
+# Sigstore
+brew "cosign"
+brew "gitsign"
+
+cask "iterm2"
+cask "firefox"
+{{ end }}
