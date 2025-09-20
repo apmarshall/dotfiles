@@ -50,7 +50,7 @@ values."
      auto-completion
      ;; better-defaults
      emacs-lisp
-     fasd
+     ;; fasd
      git
      gtags
      markdown
