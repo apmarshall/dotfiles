@@ -5,11 +5,11 @@
         protocol = ssh
 
 [user]
-        name = "{{ .username }}"
-        email = "{{ .email }}"
-        {{ if eq .equipment "gfe" }}
+        name = "{{- .username }}"
+        email = "{{- .email }}"
+        {{ if eq .equipment "gfe" -}}
         sigingkey = ~/.ssh/gitlab.pub
-        {{ end }}
+        {{ end -}}
 
 [alias]
         co = checkout
@@ -58,11 +58,11 @@
 	    # https://help.github.com/articles/signing-commits-using-gpg/
 	    gpgsign = true
 
-{{ if eq .equipment "gfe" }}
+{{ if eq .equipment "gfe" -}}
 [gpg]
 		format = ssh
 		
-{{ else }}
+{{ else -}}
 [tag]
 		gpgsign = true
 		
@@ -71,7 +71,7 @@
 		
 [gpg "x509"]
 		program = gitsign
-{{ end }}
+{{ end -}}
 			
 [apply]
         whitespace = nowarn
