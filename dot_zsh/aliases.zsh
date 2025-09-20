@@ -1,4 +1,4 @@
 alias reload!='. ~/.zshrc'
 
-alias emacs='/usr/local/bin/emacs'
-alias emacsclient='/usr/local/bin/emacsclient'
+alias emacs='/opt/homebrew/bin/emacs'
+alias emacsclient='/opt/homebrew/bin/emacsclient'
